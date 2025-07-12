@@ -1,0 +1,16 @@
+Textile Medicale Project
+
+1.In this project, we will work with two parts. One part is software and other one is hardware part. In software part we will use Thingsbord cloud part and thingsboard edge SaaS application. In thingsboard cloud we will add the edge extension using the licence key. After that we will get the edge key and edge secret key.
+
+2.Using this secret key we will configure the edge congiguration from edge. After successfully istallation everything we can browse the edge web application by edge ip address and login by cloud credential. 
+
+3.Now we can create the devices group in thingsbord. We collect the values from energy meter by node red using modbus rtu and prepare to sending the values to thingsboard edge. 
+
+4. When we will successfully get this values in thingsboard edge we also see this values in thingsboard cloud.
+With this values we will crete a dashbord in thigsboard cloud.  
+
+
+
+https://thingsboard.cloud/api/noauth/activate?activateToken=oOgwVsL8pfzGGVDYuA5YOI8pKGaynk
+
+1. temp-a-adeunis-comfort2

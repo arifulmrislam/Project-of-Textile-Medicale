@@ -1,0 +1,134 @@
+{
+  "ruleChain": {
+    "additionalInfo": {
+      "description": ""
+    },
+    "name": "Alarm-IoT-2040 Inactive",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": false,
+    "configuration": null
+  },
+  "metadata": {
+    "firstNodeIndex": 0,
+    "nodes": [
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 68,
+          "layoutY": 269
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "Alarm",
+        "debugMode": false,
+        "configuration": {
+          "jsScript": "return msg.count === 0;"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 302,
+          "layoutY": 320
+        },
+        "type": "org.thingsboard.rule.engine.action.TbClearAlarmNode",
+        "name": "Create inactivity Alarm",
+        "debugMode": false,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {};\n// var date = new Date().getHours().getMinutes();\n// var today = new Date();\n// var date = today.getHours() + \":\" + today.getMinutes();\n\nvar today = new Date();\nvar date = today.getFullYear()+'.'+(today.getMonth()+1)+'.'+today.getDate();\nvar time = today.getHours() + \":\" + today.getMinutes() + \":\" + today.getSeconds();\nvar dateTime =date+', la ora '+time;\nif (metadata.prevAlarmDetails) {\n    var prevDetails = JSON.parse(metadata.prevAlarmDetails);\n    details.count = prevDetails.count + 1;\n    details.date = dateTime;\n    details.message = prevDetails.message;\n    details.device= prevDetails.device;\n} else {\n    details.count = 1;\n    details.date = dateTime;\n    details.message = \"Tensiunea pe Faza 1 a cazut in\";\n}\n\nreturn details;\n\n// var details = {};\n// if (metadata.prevAlarmDetails) {\n//     details = JSON.parse(metadata.prevAlarmDetails);\n// }else {\n//     details.message = \"Tensiunea pe Faza 1 a revenit la ora.\";\n// }\n// return details;",
+          "alarmType": "General Alarm"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 518,
+          "layoutY": 252
+        },
+        "type": "org.thingsboard.rule.engine.mail.TbMsgToEmailNode",
+        "name": "Email to Customer",
+        "debugMode": false,
+        "configuration": {
+          "fromTemplate": "contact@polisea.ro",
+          "toTemplate": "ariful.islam@polisea.ro",
+          "ccTemplate": null,
+          "bccTemplate": null,
+          "subjectTemplate": "Lipsa tensiune",
+          "bodyTemplate": "Tensiunea pe Faza 1 a cazut in $[details.date]"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 783,
+          "layoutY": 247
+        },
+        "type": "org.thingsboard.rule.engine.mail.TbSendEmailNode",
+        "name": "Email",
+        "debugMode": false,
+        "configuration": {
+          "useSystemSmtpSettings": true,
+          "smtpHost": "localhost",
+          "smtpPort": 25,
+          "username": null,
+          "password": null,
+          "smtpProtocol": "smtp",
+          "timeout": 10000,
+          "enableTls": false,
+          "tlsVersion": "TLSv1.2",
+          "enableProxy": false,
+          "proxyHost": null,
+          "proxyPort": null,
+          "proxyUser": null,
+          "proxyPassword": null
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 295,
+          "layoutY": 194
+        },
+        "type": "org.thingsboard.rule.engine.action.TbCreateAlarmNode",
+        "name": "Create inactivity Alarm",
+        "debugMode": false,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {};\n// var date = new Date().getHours().getMinutes();\n// var today = new Date();\n// var date = today.getHours() + \":\" + today.getMinutes();\n\nvar today = new Date();\nvar date = today.getFullYear()+'.'+(today.getMonth()+1)+'.'+today.getDate();\nvar time = today.getHours() + \":\" + today.getMinutes() + \":\" + today.getSeconds();\nvar dateTime = date+', la ora '+time;\nif (metadata.prevAlarmDetails) {\n    var prevDetails = JSON.parse(metadata.prevAlarmDetails);\n    details.count = prevDetails.count + 1;\n    details.date = dateTime;\n    details.message = prevDetails.message;\n    details.device= prevDetails.device;\n} else {\n    details.count = 1;\n    details.date = dateTime;\n    details.message = \"Tensiunea pe Faza 1 a cazut in\";\n}\n\nreturn details;\n\n// var details = {};\n// if (metadata.prevAlarmDetails) {\n//     details = JSON.parse(metadata.prevAlarmDetails);\n// }else {\n//     details.message = \"Tensiunea pe Faza 1 a revenit la ora.\";\n// }\n// return details;",
+          "useMessageAlarmData": false,
+          "alarmType": "General Alarm",
+          "severity": "CRITICAL",
+          "propagate": false,
+          "relationTypes": []
+        }
+      }
+    ],
+    "connections": [
+      {
+        "fromIndex": 0,
+        "toIndex": 4,
+        "type": "True"
+      },
+      {
+        "fromIndex": 0,
+        "toIndex": 1,
+        "type": "True"
+      },
+      {
+        "fromIndex": 1,
+        "toIndex": 2,
+        "type": "Cleared"
+      },
+      {
+        "fromIndex": 2,
+        "toIndex": 3,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 4,
+        "toIndex": 2,
+        "type": "Created"
+      }
+    ],
+    "ruleChainConnections": null
+  }
+}
