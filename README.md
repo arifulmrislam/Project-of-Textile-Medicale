@@ -17,6 +17,10 @@ The **Textile Medicale Project** integrates both hardware and software component
 
 This architecture allows resilient edge-to-cloud telemetry flows and visualization in industrial IoT / smart textile setups.
 
+| Onsite Installation  | Onsite Installation  |
+|-------|-----------|
+| ![OnsitePicture](https://github.com/arifulmrislam/Project-of-Textile-Medicale/blob/main/IMG/image-from-onside3.jpg) | ![OnsitePicture](https://github.com/arifulmrislam/Project-of-Textile-Medicale/blob/main/IMG/image-from-onside1.jpg) |
+
 ---
 
 ## 📦 Architecture & Workflow
@@ -43,7 +47,7 @@ Here is the high-level flow:
    - On the hardware side (Node-RED), connect to energy meters via Modbus RTU  
    - Format and forward telemetry to ThingsBoard Edge
      
-| Devices | Modbus Setup |
+| Devices (Node-RED) | Modbus Setup |
 |-------|-----------|
 | ![Devices](https://github.com/arifulmrislam/Project-of-Textile-Medicale/blob/main/IMG/screenshot-from-node-red1.png) | ![Modbus setup](https://github.com/arifulmrislam/Project-of-Textile-Medicale/blob/main/IMG/screenshot-from-node-red2.png) |
 
@@ -71,19 +75,6 @@ Here is the high-level flow:
 ### Gateway
 
 - **MikroTik RBwAPR-2nD** — acting as the network gateway (edge connectivity, bridging, routing)
-
-## Program
-
-
-
-| Members | Pools |
-|---------|-------|
-| ![Members](https://github.com/arifulmrislam/CLIC-APP/blob/main/clients/src/assets/member-list.png) | ![Pools](https://github.com/arifulmrislam/CLIC-APP/blob/main/clients/src/assets/pool-list.png) |
-
-| Create | Edit |
-|---------|-------|
-| ![Create](https://github.com/arifulmrislam/CLIC-APP/blob/main/clients/src/assets/create-pool.png) | ![Edit](https://github.com/arifulmrislam/CLIC-APP/blob/main/clients/src/assets/edit-pool.png) |
----
 
 ---
 
@@ -128,18 +119,20 @@ Below is a consolidated setup outline. You should provide more detailed scripts 
 
 ## 📁 Repository Structure (suggested)
 
-src/
-- ├── docs/
-- │ ├── edge_installation.md
-- │ ├── node_red_flow.json
-- │ ├── modbus_mappings.md
-- │ └── dashboard_examples.md
-- ├── src/ # any scripts, drivers, utilities
-- ├── flows/ # Node-RED flow JSON files
-- ├── config/ # config templates (edge, modbus, credentials)
-- ├── images/ # screenshots, architecture diagrams
-- ├── README.md # this file
-- └── LICENSE
+```bash
+/
+├── docs/
+│   ├── edge_installation.md
+│   ├── node_red_flow.json
+│   ├── modbus_mappings.md
+│   └── dashboard_examples.md
+├── src/                  # any scripts, drivers, utilities
+├── flows/                # Node-RED flow JSON files
+├── config/               # config templates (edge, modbus, credentials)
+├── images/               # screenshots, architecture diagrams
+├── README.md             # this file
+└── LICENSE
+```
 ---
 
 ## ✅ Features & Benefits
@@ -153,8 +146,8 @@ src/
 
 ## 🧪 Usage Example
 
-Here’s a quick example of how Node-RED might send data to ThingsBoard Edge (pseudocode / JSON):
-That payload could be posted via HTTP/MQTT to the Edge API endpoint (e.g. `/api/v1/<edgeToken>/telemetry`) and then is forwarded to the cloud automatically.
+Here’s a quick example of how Node-RED might send telemetry to ThingsBoard Edge.  
+The payload below can be sent via HTTP/MQTT to the Edge API endpoint (`/api/v1/<edgeToken>/telemetry`) and will automatically forward to the cloud:
 
 ```json
 {
@@ -198,9 +191,8 @@ That payload could be posted via HTTP/MQTT to the Edge API endpoint (e.g. `/api/
 
 ## 🙏 Acknowledgements & References
 
-- 
-- `ThingsBoard Documentation:` [ThingsBoard Documentation](https://thingsboard.io/docs/)
-- `Node-RED community & modbus nodes:` [Node-RED community & modbus nodes](https://discourse.nodered.org/)
-- MikroTik RouterOS & wireless gateway setup guides
+- [ThingsBoard Documentation](https://thingsboard.io/docs/)  
+- [Node-RED Community & Modbus Nodes](https://discourse.nodered.org/)  
+- MikroTik RouterOS & Wireless Gateway Setup Guides  
   
 ---
