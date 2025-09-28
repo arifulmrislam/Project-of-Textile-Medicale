@@ -68,7 +68,7 @@ Here is the high-level flow:
 
 | Devices | Modbus Setup |
 |-------|-----------|
-| ![Devices]([https://github.com/arifulmrislam/CLIC-APP/blob/main/clients/src/assets/admin-login.png](https://github.com/arifulmrislam/Project-of-Textile-Medicale/blob/main/IMG/screenshot-from-node-red1.png)) | ![Modbus setup](https://github.com/arifulmrislam/Project-of-Textile-Medicale/blob/main/IMG/screenshot-from-node-red2.png) |
+| ![Devices](https://github.com/arifulmrislam/Project-of-Textile-Medicale/blob/main/IMG/screenshot-from-node-red1.png) | ![Modbus setup](https://github.com/arifulmrislam/Project-of-Textile-Medicale/blob/main/IMG/screenshot-from-node-red2.png) |
 
 | Members | Pools |
 |---------|-------|
