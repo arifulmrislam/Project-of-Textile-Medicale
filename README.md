@@ -27,7 +27,11 @@ Here is the high-level flow:
    - Start with a ThingsBoard Cloud instance  
    - Enable the Edge extension via license activation  
    - Retrieve `edgeKey` and `edgeSecretKey` for your edge instance  
-   - Install and configure the ThingsBoard Edge (SaaS) using those credentials  
+   - Install and configure the ThingsBoard Edge (SaaS) using those credentials
+
+| ThingsBoard Edge | Edge Integration |
+|-------|-----------|
+| ![Edge](https://github.com/arifulmrislam/Project-of-Textile-Medicale/blob/main/IMG/edge2.png) | ![Edge Integration](https://github.com/arifulmrislam/Project-of-Textile-Medicale/blob/main/IMG/edge-integration.png) |
 
 2. **Edge Configuration & Access**  
    - Use the secret key to finalize edge setup  
