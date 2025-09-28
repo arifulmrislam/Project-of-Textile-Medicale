@@ -37,7 +37,11 @@ Here is the high-level flow:
 3. **Device Definition & Telemetry Pipeline**  
    - In ThingsBoard Cloud, create *Device Groups*  
    - On the hardware side (Node-RED), connect to energy meters via Modbus RTU  
-   - Format and forward telemetry to ThingsBoard Edge  
+   - Format and forward telemetry to ThingsBoard Edge
+     
+| Devices | Modbus Setup |
+|-------|-----------|
+| ![Devices](https://github.com/arifulmrislam/Project-of-Textile-Medicale/blob/main/IMG/screenshot-from-node-red1.png) | ![Modbus setup](https://github.com/arifulmrislam/Project-of-Textile-Medicale/blob/main/IMG/screenshot-from-node-red2.png) |
 
 4. **Cloud Sync & Dashboarding**  
    - Once telemetry arrives at Edge, sync it to ThingsBoard Cloud  
@@ -66,9 +70,7 @@ Here is the high-level flow:
 
 ## Program
 
-| Devices | Modbus Setup |
-|-------|-----------|
-| ![Devices](https://github.com/arifulmrislam/Project-of-Textile-Medicale/blob/main/IMG/screenshot-from-node-red1.png) | ![Modbus setup](https://github.com/arifulmrislam/Project-of-Textile-Medicale/blob/main/IMG/screenshot-from-node-red2.png) |
+
 
 | Members | Pools |
 |---------|-------|
