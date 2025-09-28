@@ -62,7 +62,22 @@ Here is the high-level flow:
 
 ### Gateway
 
-- **MikroTik RBwAPR-2nD** — acting as the network gateway (edge connectivity, bridging, routing)  
+- **MikroTik RBwAPR-2nD** — acting as the network gateway (edge connectivity, bridging, routing)
+
+## Program
+
+| Devices | Modbus Setup |
+|-------|-----------|
+| ![Devices]([https://github.com/arifulmrislam/CLIC-APP/blob/main/clients/src/assets/admin-login.png](https://github.com/arifulmrislam/Project-of-Textile-Medicale/blob/main/IMG/screenshot-from-node-red1.png) | ![Modbus setup](https://github.com/arifulmrislam/Project-of-Textile-Medicale/blob/main/IMG/screenshot-from-node-red2.png) |
+
+| Members | Pools |
+|---------|-------|
+| ![Members](https://github.com/arifulmrislam/CLIC-APP/blob/main/clients/src/assets/member-list.png) | ![Pools](https://github.com/arifulmrislam/CLIC-APP/blob/main/clients/src/assets/pool-list.png) |
+
+| Create | Edit |
+|---------|-------|
+| ![Create](https://github.com/arifulmrislam/CLIC-APP/blob/main/clients/src/assets/create-pool.png) | ![Edit](https://github.com/arifulmrislam/CLIC-APP/blob/main/clients/src/assets/edit-pool.png) |
+---
 
 ---
 
